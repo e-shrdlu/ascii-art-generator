@@ -32,6 +32,7 @@ for e, the option required is 'url'. this is the url of the youtube video
 for d, the option required is 'webcam id'. this is the id of the webcam you want to use, which will usually be 0
 
 description of each option:
+
 `a) saved video`
 uses openCV to convert each frame of an mp4 video to ascii, and displays that on the terminal
 input: path=location of video on disc
