@@ -16,14 +16,14 @@ youtube videos are downloaded with pytube https://github.com/pytube/pytube
 # usage
 run ascci_art_generator.py. you should see the following
 
-`a) saved video
+```a) saved video
 b) saved picture
 c) screenshot
 d) webcam
 e) youtube video
 f) read saved ascii art
 g) settings
-h) quit`
+h) quit```
 
 enter a letter to choose what you want to do. The may then prompt you for input if your choice requires it. For a, b, and f, the option required is 'path'. this is where on your disc the file you want to display is.
 for e, the option required is 'url'. this is the url of the youtube video
