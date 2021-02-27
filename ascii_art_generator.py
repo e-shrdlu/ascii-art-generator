@@ -86,7 +86,7 @@ def print_ascii_from_im(im):
     global horizontal_size, vertical_size, save_ascii_art_in
     horizontal_size = int(vertical_size*horizontal_scale*im.size[0]/im.size[1])
     im=im.resize((horizontal_size,vertical_size))
-    ascii_art = get_ascii_from_image(im, False)+'\n'
+    ascii_art = get_ascii_from_image(im)+'\n'
     print_large_block(ascii_art)
 
 
