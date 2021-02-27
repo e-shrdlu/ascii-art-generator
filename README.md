@@ -91,11 +91,17 @@ pretty self explainitory
 # examples
 
 ### surprised pikachu
-vertical_size = 25
+##### vertical_size = 25
+
 ![surprised_pikachu_small](https://raw.githubusercontent.com/rainbowkitty227/ascii-art-generator/main/examples/surprised_pikachu_small.png)
-vertical_size=75
+
+##### vertical_size=75
+
 ![surprised pikachu large](https://raw.githubusercontent.com/rainbowkitty227/ascii-art-generator/main/examples/surprised_pikachu_large.png)
+
 ### my desk
-vertical_size=75
+
+##### vertical_size=75
 objects from left to right: an open drawer, a dry erase marker, my phone, coffee mug, and a keypad
+
 ![my desk](https://raw.githubusercontent.com/rainbowkitty227/ascii-art-generator/main/examples/my_desk.png)
