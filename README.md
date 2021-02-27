@@ -79,7 +79,7 @@ pretty self explainitory
 
 # dependencies
 
-## requred
+## required
     PIL
     cv2
 
