@@ -62,6 +62,7 @@ reads and displays a text file containing ascii art generated from this program.
 input: path=location of text file
 
 `g) settings`
+```
 allows user to change settings. you can change the following variables:
 float horizontal_scale -- default 2, how many characters wide each pixel should be
 int vertical_size -- default 75, how many lines the generated ascii art should be
@@ -69,6 +70,7 @@ str yt_video_path -- default None, where to temporarily save youtube videos (mus
 int frames_to_play -- default 0, how many frames of a video to display before returning to menu. if 0, displays all
 int mirrored -- default 0, (0 or 1) if image should be flipped when converted. most useful with webcam feed
 str save_ascii_art_in -- default None, text file to save each ascii image in.
+```
 
 `h) quit`
 pretty self explainitory
