@@ -1,0 +1,5 @@
+keyboard==0.13.5
+opencv-python==4.4.0.42
+Pillow==7.2.0
+PyAutoGUI==0.9.50
+pytube==10.4.1
