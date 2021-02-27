@@ -4,9 +4,9 @@ generates ascii art from pictures, videos, webcam feed, or youtube videos
 
 
 # how it works
-## short version
+### short version
 image is shrunk, then each pixel is converted to a character based on its brightness (ex ' '=brightness 0, 'X'=brightness 100, '@'=brightness 255, etc)
-## longer version
+### longer version
 Videos will be split into frames with openCV, and each frame is converted to a PIL image.
 PIL image is then resized to y=vertical_size, keeping the orignal aspect ration, then x is scaled by horizontal_scale to roughly match the original aspect ratio when converted to ascii.
 Each pixel in the resized image is itererated through, and brightness is determined by (r+g+b)/3, which is then scaled down to an integer from 0-48, and that location in char_list defines the character which will be used to represent that pixel.
@@ -36,7 +36,7 @@ for e, the option required is 'url'. this is the url of the youtube video
 for d, the option required is 'webcam id'. this is the id of the webcam you want to use, which will usually be 0
 
 
-## description of each option
+### description of each option
 
 `a) saved video`
 uses openCV to convert each frame of an mp4 video to ascii, and displays that on the terminal
@@ -79,11 +79,11 @@ pretty self explainitory
 
 # dependencies
 
-## required
+### required
     PIL
     cv2
 
-## needed for certain features
+### needed for certain features
     pytube (for youtube feature)
     keyboard (for screenshot feature)
     pyautogui (for screenshot feature)
