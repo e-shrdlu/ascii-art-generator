@@ -2,7 +2,7 @@
 generates ascii art from pictures, videos, webcam feed, or youtube videos
 
 
-how it works:
+# how it works
 short version: image is shrunk, then each pixel is converted to a character based on its brightness (ex ' '=brightness 0, 'X'=brightness 100, '@'=brightness 255, etc)
 longer version: videos will be split into frames with openCV, and each frame is converted to a PIL image.
 PIL image is then resized to y=vertical_size, keeping the orignal aspect ration, then x is scaled by horizontal_scale to roughly match the original aspect ratio when converted to ascii.
@@ -13,17 +13,17 @@ char_list was generated using char_brightness_rating.py, which prints out each c
 youtube videos are downloaded with pytube https://github.com/pytube/pytube
 
 
-usage:
+# usage
 run ascci_art_generator.py. you should see the following
 
-a) saved video
-b) saved picture
-c) screenshot
-d) webcam
-e) youtube video
-f) read saved ascii art
-g) settings
-h) quit
+ a) saved video
+ b) saved picture
+ c) screenshot
+ d) webcam
+ e) youtube video
+ f) read saved ascii art
+ g) settings
+ h) quit
 
 enter a letter to choose what you want to do. The may then prompt you for input if your choice requires it. For a, b, and f, the option required is 'path'. this is where on your disc the file you want to display is.
 for e, the option required is 'url'. this is the url of the youtube video
@@ -66,7 +66,7 @@ h) quit
 pretty self explainitory
 
 
-dependencies:
+# dependencies
 requred:
     PIL
     cv2
