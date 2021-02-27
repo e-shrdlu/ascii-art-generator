@@ -124,6 +124,9 @@ def show_saved_picture(path):
 
 def play_youtube_video(url):
     global yt_video_path
+    if not yt_video_path:
+        print('you need to set yt_video_path in settings')
+        return -1
     if not os.path.exists(yt_video_path):
         os.mkdir(yt_video_path)
     video_path = download_yt_video(url, path=yt_video_path)
@@ -218,13 +221,13 @@ def main(): # do I even need a main function? why do i have this?
     ui()
 
 
-char_list=[' ','`','.','-',"'",',',':','_',';','"','~','*','!','+','<','7','r','/','i','^','v','l','?','t','}','j','C','x','2','S','V','y','E','O','X','G','q', 'N','0','$','b','#','D','8','%','M','W','@','&']
+char_list=list(' `.-\',:_;"~*!+<7r/i^vl?t}jCx2SVyEOXGqN0$b#D8%MW@&')
 horizontal_scale = 2
 vertical_size = 75
-yt_video_path='D:\\tmp\\ytvideos'
+yt_video_path = None
 frames_to_play = 0
 mirrored = 0
-save_ascii_art_in = '' # if not blank, will store each frame in this text file
+save_ascii_art_in = None # if not blank, will store each frame in this text file
 
 go = True
 
