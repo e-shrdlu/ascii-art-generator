@@ -2,6 +2,7 @@
 generates ascii art from pictures, videos, webcam feed, or youtube videos
 
 
+
 # how it works
 ## short version
 image is shrunk, then each pixel is converted to a character based on its brightness (ex ' '=brightness 0, 'X'=brightness 100, '@'=brightness 255, etc)
@@ -13,6 +14,7 @@ Each pixel in the resized image is itererated through, and brightness is determi
 char_list was generated using char_brightness_rating.py, which prints out each character enough to fill terminal window, screenshots, calculates average brightness, and sorts characters based on calculated brightness
 
 youtube videos are downloaded with pytube https://github.com/pytube/pytube
+
 
 
 # usage
@@ -32,6 +34,7 @@ h) quit
 enter a letter to choose what you want to do. The may then prompt you for input if your choice requires it. For a, b, and f, the option required is 'path'. this is where on your disc the file you want to display is.
 for e, the option required is 'url'. this is the url of the youtube video
 for d, the option required is 'webcam id'. this is the id of the webcam you want to use, which will usually be 0
+
 
 ## description of each option
 
@@ -71,10 +74,13 @@ str save_ascii_art_in -- default None, text file to save each ascii image in.
 pretty self explainitory
 
 
+
 # dependencies
+
 ## requred
     PIL
     cv2
+
 ## needed for certain features
     pytube (for youtube feature)
     keyboard (for screenshot feature)
