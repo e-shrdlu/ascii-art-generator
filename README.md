@@ -105,3 +105,7 @@ pretty self explainitory
 objects from left to right: an open drawer, a dry erase marker, my phone, coffee mug, and a keypad
 
 ![my desk](https://raw.githubusercontent.com/rainbowkitty227/ascii-art-generator/main/examples/my_desk.png)
+
+
+# inspiration
+https://github.com/samuel1212703/Video-To-Ascii-CMD and https://github.com/jsimb/image-to-ascii
