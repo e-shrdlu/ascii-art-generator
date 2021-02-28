@@ -36,6 +36,7 @@ enter a letter to choose what you want to do. The may then prompt you for input 
 for e, the option required is 'url'. this is the url of the youtube video
 for d and g, the option required is 'webcam id'. this is the id of the webcam you want to use, which will usually be 0
 
+or, just run rick_roll.py, a dependency free demo of this project.
 
 ### description of each option
 
