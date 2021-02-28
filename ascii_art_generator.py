@@ -4,7 +4,7 @@ import cv2
 import sys
 import os
 import socket
-
+from threading import Thread
 
 def print_large_block(text):
     global save_ascii_art_in
@@ -72,12 +72,22 @@ def video_chat(webcam_id):
         conn.connect((host,port))
     else:
         return -1
+
+    def print_recv(c):
+        global go
+        while go:
+            recv_frms = str(conn.recv(4096).decode()).split('\n\n')
+            for frm in recv_frms(print_large_block(frm))
+    recv_thr = Thread(target=print_recv,args=(c))
+    recv_thr.start()
     for frame in get_video_frms(webcam_id, 'PIL'):
+        print('asdf')
         conn.send((get_ascii_from_image(frame)+'\n\n').encode())
-        recv_frms = str(conn.recv(16384).decode()).split('\n\n')
-        if len(recv_frms) > 50: # if this computer is really behind, just reset
-            conn.recv(2**32) # clear buffer
-            continue
+        recv_frms = str(conn.recv(2048).decode()).split('\n\n')
+        # if len(recv_frms) > 50: # if this computer is really behind, just reset
+        #     print('clearing buffer because thers too many frames')
+        #     conn.recv(2**32) # clear buffer
+        #     continue
         for frm in recv_frms:
             print_large_block(frm)
 
