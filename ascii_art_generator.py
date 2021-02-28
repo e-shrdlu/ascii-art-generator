@@ -3,6 +3,7 @@ import time
 import cv2
 import sys
 import os
+import socket
 
 
 def print_large_block(text):
@@ -50,6 +51,36 @@ def cv2_to_PIL(frame):
     # cv2.imshow('image',frame)
     pil_im = Image.fromarray(color_mode_converted)
     return pil_im
+
+
+def video_chat(webcam_id):
+    webcam_id = int(webcam_id)
+    s = socket.socket()
+    role = input('a) host\nb) join\n>>')
+    if role == 'a':
+        host = '0.0.0.0' # socket.gethostname()
+        port = int(input('port: '))
+        s.bind((host,port))
+        print("port:",port,"\nIP:",socket.gethostbyname(host),"\nwaiting for connection...")
+        s.listen(1)
+        conn, addr = s.accept()
+        print(addr, "has connected")
+    elif role == 'b':
+        host = input('IP: ')
+        port = int(input('port: '))
+        conn=s
+        conn.connect((host,port))
+    else:
+        return -1
+    for frame in get_video_frms(webcam_id, 'PIL'):
+        conn.send((get_ascii_from_image(frame)+'\n\n').encode())
+        recv_frms = str(conn.recv(16384).decode()).split('\n\n')
+        if len(recv_frms) > 50: # if this computer is really behind, just reset
+            conn.recv(2**32) # clear buffer
+            continue
+        for frm in recv_frms:
+            print_large_block(frm)
+
 
 
 def show_screenshot():
@@ -196,7 +227,7 @@ def ui():
     global go
     go = True
     # options, letter is how you select the option, first item is name, second is options required, third is func
-    choices = {'a':['saved video','path',play_ascii_video],'b':['saved picture','path',show_saved_picture],'c':['screenshot','',show_screenshot],'d':['webcam','webcam id (probably 0)',play_webcam],'e':['youtube video', 'url', play_youtube_video], 'f':['read saved ascii art', 'path',read_ascii_art_file], 'g':['settings', '',change_settings], 'h':['quit','', stop_execution]}
+    choices = {'a':['saved video','path',play_ascii_video],'b':['saved picture','path',show_saved_picture],'c':['screenshot','',show_screenshot],'d':['webcam','webcam id (probably 0)',play_webcam],'e':['youtube video', 'url', play_youtube_video], 'f':['read saved ascii art', 'path',read_ascii_art_file], 'g':['video chat (expirimental)','webcam id (probably 0)',video_chat], 'h':['settings', '',change_settings], 'i':['quit','', stop_execution]}
     while go:
         print('\n'.join([opt+') '+choices[opt][0] for opt in choices.keys()])) # prints menu
         try:

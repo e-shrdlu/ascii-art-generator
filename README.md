@@ -27,13 +27,14 @@ c) screenshot
 d) webcam
 e) youtube video
 f) read saved ascii art
-g) settings
-h) quit
+g) video chat (expirimental)
+h) settings
+i) quit
 ```
 
 enter a letter to choose what you want to do. The may then prompt you for input if your choice requires it. For a, b, and f, the option required is 'path'. this is where on your disc the file you want to display is.
 for e, the option required is 'url'. this is the url of the youtube video
-for d, the option required is 'webcam id'. this is the id of the webcam you want to use, which will usually be 0
+for d and g, the option required is 'webcam id'. this is the id of the webcam you want to use, which will usually be 0
 
 
 ### description of each option
@@ -61,7 +62,12 @@ input: url=url of youtube video to play
 reads and displays a text file containing ascii art generated from this program. to save ascii art, see settings menu
 input: path=location of text file
 
-`g) settings`
+`g) video chat (expirimental)`
+connects to another computer and streams your webcam in ascii art.
+input: webcam_id=webcam to use
+after entering that, you will also be prompted to choose if you are hosting or joining, then asked to input the port, and IP if you chose join.
+
+`h) settings`
 allows user to change settings. you can change the following variables:
 ```
 float horizontal_scale -- default 2, how many characters wide each pixel should be
@@ -72,7 +78,7 @@ int mirrored -- default 0, (0 or 1) if image should be flipped when converted. m
 str save_ascii_art_in -- default None, text file to save each ascii image in.
 ```
 
-`h) quit`
+`i) quit`
 pretty self explainitory
 
 
