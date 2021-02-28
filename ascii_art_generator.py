@@ -77,19 +77,21 @@ def video_chat(webcam_id):
         global go
         while go:
             recv_frms = str(conn.recv(4096).decode()).split('\n\n')
-            for frm in recv_frms(print_large_block(frm))
+            for frm in recv_frms(print_large_block(frm)):
+                print_large_block(frm)
+
     recv_thr = Thread(target=print_recv,args=(c))
     recv_thr.start()
     for frame in get_video_frms(webcam_id, 'PIL'):
         print('asdf')
-        conn.send((get_ascii_from_image(frame)+'\n\n').encode())
-        recv_frms = str(conn.recv(2048).decode()).split('\n\n')
+        conn.send(str(get_ascii_from_image(frame)+'\n\n').encode())
+        # recv_frms = str(conn.recv(2048).decode()).split('\n\n')
         # if len(recv_frms) > 50: # if this computer is really behind, just reset
         #     print('clearing buffer because thers too many frames')
         #     conn.recv(2**32) # clear buffer
         #     continue
-        for frm in recv_frms:
-            print_large_block(frm)
+        # for frm in recv_frms:
+            # print_large_block(frm)
 
 
 
