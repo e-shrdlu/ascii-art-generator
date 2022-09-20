@@ -4,6 +4,7 @@ generates ascii art from pictures, videos, webcam feed, or youtube videos
 ## demonstration
 - [webcam](https://youtu.be/Hwj0dEsiav4)
 - [rick roll](https://youtu.be/fqocynviRDk)
+  - [standalone python script](https://github.com/e-shrdlu/text_roll)
 - [static images](#examples)
 
 ## how it works
