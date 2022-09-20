@@ -2,9 +2,9 @@
 generates ascii art from pictures, videos, webcam feed, or youtube videos
 
 ## demonstration
-[webcam](https://youtu.be/Hwj0dEsiav4)
-[rick roll](https://youtu.be/fqocynviRDk)
-[static images](#examples)
+- [webcam](https://youtu.be/Hwj0dEsiav4)
+- [rick roll](https://youtu.be/fqocynviRDk)
+- [static images](#examples)
 
 ## how it works
 ### short version
