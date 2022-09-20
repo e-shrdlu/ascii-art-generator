@@ -1,9 +1,12 @@
 # ascii-art-generator
 generates ascii art from pictures, videos, webcam feed, or youtube videos
 
+## demonstration
+[webcam](https://youtu.be/Hwj0dEsiav4)
+[rick roll](https://youtu.be/fqocynviRDk)
+[static images](#examples)
 
-
-# how it works
+## how it works
 ### short version
 image is shrunk, then each pixel is converted to a character based on its brightness (ex ' '=brightness 0, 'X'=brightness 100, '@'=brightness 255, etc)
 ### longer version
@@ -17,7 +20,7 @@ youtube videos are downloaded with pytube https://github.com/pytube/pytube
 
 
 
-# usage
+## usage
 run ascci_art_generator.py. you should see the following
 
 ```
@@ -84,7 +87,7 @@ pretty self explainitory
 
 
 
-# dependencies
+## dependencies
 
 ### required
     PIL
@@ -95,7 +98,7 @@ pretty self explainitory
     keyboard (for screenshot feature)
     pyautogui (for screenshot feature)
 
-# examples
+## examples
 
 ### surprised pikachu
 ##### vertical_size = 25
